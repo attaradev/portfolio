@@ -54,14 +54,39 @@ A refreshed personal site for Mike Attara, built with Next.js 15 and Tailwind CS
 - `public/` – Static assets such as icons.
 - `postcss.config.mjs` & `tailwindcss` imports – Tailwind 4 pipeline configuration.
 
+## Contact Form Setup
+
+The contact form uses **Web3Forms** (free tier: 250 submissions/month) with mailto fallback.
+
+**Local Development:**
+
+1. Get free access key at [web3forms.com](https://web3forms.com)
+2. Create `.env.local` from example: `cp .env.local.example .env.local`
+3. Add your key: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_key`
+4. Restart dev server: `pnpm dev`
+
+**GitHub Pages Deployment:**
+
+1. Add secret in GitHub: Settings → Secrets and variables → Actions
+2. Name: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`, Value: your key
+3. Push to trigger deployment
+
 ## Customising Content
 
-Key sections live in individual components:
+Content is centralized in the `data/` directory with TypeScript types:
 
-- `components/hero.tsx` – Intro narrative, highlight metrics, hero actions.
-- `components/about.tsx`, `components/experience.tsx` – Professional story and timeline.
-- `components/contact.tsx` – Collaboration paths, contact details, and social links.
-Update copy inside these files to tailor messaging or add new sections as needed.
+- `data/hero.ts` – Hero section highlights, focus areas, and badges
+- `data/about.ts` – Stats, expertise areas, principles, and community highlights
+- `data/experience.ts` – Career timeline, roles, and skills
+- `data/navigation.ts` – Nav items, social links, and focus areas
+
+Components in `components/` render this data:
+
+- `components/hero.tsx`, `components/about.tsx`, `components/experience.tsx`
+- `components/contact.tsx` – Contact form and collaboration details
+- `components/navigation.tsx` – Sidebar and mobile navigation
+
+Update data files to change content without touching component code.
 
 ## Deployment
 
@@ -72,7 +97,9 @@ pnpm build
 pnpm start
 ```
 
-Ensure any required environment variables are configured before building (none are required by default).
+**Environment Variables for Production:**
+
+- `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` – Contact form API key (optional, uses mailto fallback if not set)
 
 For static hosting (e.g. GitHub Pages), Next.js 15 replaces `next export` with [`output: 'export'`](https://nextjs.org/docs/app/building-your-application/deploying/static-exports). Running `pnpm build` now emits the fully static site to the `out/` directory—no separate `next export` step is needed.
 

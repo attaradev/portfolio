@@ -1,97 +1,15 @@
-"use client"
+'use client'
 
-import {
-  ArrowRight,
-  BookOpen,
-  CalendarDays,
-  Clock,
-  Github,
-  Handshake,
-  Linkedin,
-  Mail,
-  MessageCircle,
-  Twitter,
-} from "lucide-react"
-
-const collaborationAreas = [
-  {
-    title: "Architecture sprints",
-    description: "Partner on platform design reviews, scaling strategies, and event-driven roadmaps.",
-  },
-  {
-    title: "DevOps & platform enablement",
-    description: "Automate delivery pipelines, observability, and infrastructure so teams ship with confidence.",
-  },
-  {
-    title: "Technical leadership support",
-    description: "Coach squads, refine engineering practices, and align delivery with product and business goals.",
-  },
-  {
-    title: "Speaking & workshops",
-    description: "Facilitate sessions on systems design, DevOps culture, and inclusive engineering leadership.",
-  },
-]
-
-const contactHighlights = [
-  {
-    icon: Clock,
-    title: "Response window",
-    description: "Replies within 48 hours Monday through Friday.",
-  },
-  {
-    icon: CalendarDays,
-    title: "Time zone",
-    description: "Based in GMT—collaborating across North America, Europe, and Africa.",
-  },
-  {
-    icon: Handshake,
-    title: "Collaboration style",
-    description: "Hands-on partnership from discovery to delivery with clear communication along the way.",
-  },
-]
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: "GitHub",
-    helper: "Open-source & code samples",
-    cta: "Explore repos",
-    href: "https://github.com/attaradev",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    helper: "Professional updates & network",
-    cta: "Connect on LinkedIn",
-    href: "https://linkedin.com/in/attaradev",
-  },
-  {
-    icon: Twitter,
-    label: "Twitter",
-    helper: "Thoughts on engineering & community",
-    cta: "Follow updates",
-    href: "https://twitter.com/attaradev",
-  },
-  {
-    icon: MessageCircle,
-    label: "Message",
-    helper: "Send a quick note",
-    cta: "Start chat",
-    href: "mailto:hello@attara.dev",
-  },
-  {
-    icon: BookOpen,
-    label: "Blog",
-    helper: "Deep dives & field notes",
-    cta: "Read articles",
-    href: "https://blog.attara.dev",
-  },
-]
+import { ArrowRight } from 'lucide-react'
+import ContactForm from '@/components/contact-form'
+import Breadcrumbs from '@/components/breadcrumbs'
+import { collaborationAreas, contactHighlights, socialLinks } from '@/data/contact'
 
 export default function Contact() {
   return (
     <section id="contact" className="py-6 sm:py-8 lg:py-10 fade-in scroll-mt-24 lg:scroll-mt-32">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
+        <Breadcrumbs />
         <div className="mb-8 sm:mb-12">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">Let's Work Together</h3>
           <div className="w-12 h-1 bg-accent rounded-full"></div>
@@ -102,7 +20,7 @@ export default function Contact() {
             <p>
               I'm always interested in architecture challenges, platform transformations, and opportunities to empower
               engineering teams. Whether you're scaling fintech rails, modernizing infrastructure, or shaping developer
-              experience—let's build something reliable together.
+              experience, let's build something reliable together.
             </p>
             <p>
               Share context about your goals, timelines, and the team you'll bring to the table. I partner best when we
@@ -129,27 +47,18 @@ export default function Contact() {
                 </div>
               </div>
 
-              <a
-                href="mailto:hello@attara.dev?subject=Let's%20Build%20Something%20Great"
-                className="group flex items-start gap-4 p-5 sm:p-6 rounded-2xl border border-accent/20 bg-accent/5 hover:bg-accent/10 hover:border-accent/40 transition-all duration-300 smooth-transition hover-lift"
-              >
-                <div className="w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center">
-                  <Mail size={22} />
-                </div>
-                <div className="flex-1">
-                  <p className="font-semibold text-lg text-foreground">hello@attara.dev</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Share your project brief, availability, and any links that provide context. I'll follow up with next
-                    steps.
-                  </p>
-                </div>
-                <ArrowRight size={20} className="text-muted-foreground group-hover:text-accent transition-colors mt-1" />
-              </a>
+              {/* Contact Form */}
+              <div className="mt-8">
+                <h4 className="text-xl font-semibold text-foreground mb-6">Send a Message</h4>
+                <ContactForm />
+              </div>
             </div>
 
             <aside className="grid gap-5">
               <div className="border border-border/50 rounded-xl p-5 sm:p-6 bg-card/40 backdrop-blur-sm">
-                <h4 className="text-sm font-semibold text-muted-foreground tracking-widest uppercase mb-3">What to expect</h4>
+                <h4 className="text-sm font-semibold text-muted-foreground tracking-widest uppercase mb-3">
+                  What to expect
+                </h4>
                 <ul className="space-y-4">
                   {contactHighlights.map((item) => {
                     const Icon = item.icon
@@ -169,7 +78,9 @@ export default function Contact() {
               </div>
 
               <div className="rounded-xl bg-accent/5 border border-accent/20 p-5 sm:p-6 space-y-3 smooth-transition hover:border-accent/40">
-                <p className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">Speaking requests</p>
+                <p className="text-xs font-semibold text-muted-foreground tracking-widest uppercase">
+                  Speaking requests
+                </p>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   Planning a meetup, conference, or internal workshop? Let's craft a session on systems architecture,
                   DevOps culture, or engineering leadership.
@@ -199,8 +110,8 @@ export default function Contact() {
                   <a
                     key={link.label}
                     href={link.href}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="group relative flex flex-col gap-3 p-5 rounded-xl border border-border/50 bg-card/40 transition-all duration-300 smooth-transition overflow-hidden hover:border-accent/60 hover:bg-card/70 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/20 h-full"
                   >
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-accent/10 text-muted-foreground group-hover:bg-accent/20 group-hover:text-accent transition-colors flex-shrink-0">

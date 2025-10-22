@@ -1,11 +1,11 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *, [data-theme="dark"] *));
 
 :root,
 .light,
-[data-theme="light"] {
+[data-theme='light'] {
   color-scheme: light;
 
   /* Light theme with balanced contrast for readability */
@@ -49,7 +49,7 @@
 }
 
 .dark,
-[data-theme="dark"] {
+[data-theme='dark'] {
   color-scheme: dark;
 
   --background: oklch(0.08 0 0);
@@ -88,7 +88,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not(.light):not([data-theme="light"]) {
+  :root:not(.light):not([data-theme='light']) {
     color-scheme: dark;
 
     --background: oklch(0.08 0 0);
@@ -128,8 +128,8 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -237,5 +237,24 @@
   /* Smooth transitions */
   .smooth-transition {
     transition: all 0.3s ease-out;
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    .fade-in,
+    .animate-fade-in,
+    .slide-in-up,
+    .hover-lift {
+      animation: none !important;
+    }
   }
 }

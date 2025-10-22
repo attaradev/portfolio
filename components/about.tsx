@@ -24,8 +24,8 @@ const highlightStats = [
   {
     icon: Cpu,
     label: "Core stack expertise",
-    value: "Rails • Node • Java • Django",
-    description: "Architected platforms in Ruby on Rails, NestJS, Django, and Spring Boot backed by AWS and PostgreSQL.",
+    value: "Rails • Node",
+    description: "Architected platforms in Ruby on Rails, NestJS, and Spring Boot backed by AWS and PostgreSQL.",
   },
   {
     icon: Globe2,

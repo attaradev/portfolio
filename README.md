@@ -1,0 +1,81 @@
+# Attara.dev Redesign
+
+A refreshed personal site for Mike Attara, built with Next.js 15 and Tailwind CSS 4. It delivers a polished engineering portfolio with responsive layouts, rich storytelling sections, and first-class support for light and dark theming.
+
+## Features
+
+- **System-aware theming** that follows the visitor’s OS preference by default, with manual toggles on desktop and mobile.
+- **Responsive layout** combining a persistent sidebar navigation with mobile-first interactions.
+- **Sectioned storytelling** covering hero highlights, about, experience, and contact modules.
+- **Modern tooling** powered by Next.js App Router, React 19, Tailwind CSS 4, and Lucide icons.
+- **Vercel Analytics** integration ready for production deployments.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18.18 or newer (Next.js 15 requirement)
+- [pnpm](https://pnpm.io/) 8+ (other package managers work, but commands below assume pnpm)
+
+### Installation
+
+1. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+3. Visit `http://localhost:3000` to explore the site. The server reloads automatically when files change.
+
+### Available Scripts
+
+- `pnpm dev` – Run the Next.js development server.
+- `pnpm build` – Create an optimized production build.
+- `pnpm start` – Serve the production build.
+- `pnpm lint` – Lint the project (ensure ESLint is installed or add it via `pnpm add -D eslint`).
+
+## Theming
+
+- The site respects the system’s `prefers-color-scheme` by default.
+- Theme toggles appear in the sidebar and mobile controls, letting visitors switch between light and dark manually.
+- The active choice is stored locally, so repeat visits keep the user’s preference.
+- Theme tokens live in `app/globals.css`, making it easy to adjust palettes or add brand colours.
+
+## Project Structure
+
+- `app/` – App Router entry points, global layout, and top-level pages.
+- `components/` – Reusable UI, including navigation, section content, and theming utilities.
+- `public/` – Static assets such as icons.
+- `postcss.config.mjs` & `tailwindcss` imports – Tailwind 4 pipeline configuration.
+
+## Customising Content
+
+Key sections live in individual components:
+
+- `components/hero.tsx` – Intro narrative, highlight metrics, hero actions.
+- `components/about.tsx`, `components/experience.tsx` – Professional story and timeline.
+- `components/contact.tsx` – Collaboration paths, contact details, and social links.
+Update copy inside these files to tailor messaging or add new sections as needed.
+
+## Deployment
+
+The project is deployment-ready for platforms like Vercel:
+
+```bash
+pnpm build
+pnpm start
+```
+
+Ensure any required environment variables are configured before building (none are required by default).
+
+For static hosting (e.g. GitHub Pages), Next.js 15 replaces `next export` with [`output: 'export'`](https://nextjs.org/docs/app/building-your-application/deploying/static-exports). Running `pnpm build` now emits the fully static site to the `out/` directory—no separate `next export` step is needed.
+
+## License
+
+No license has been specified. All rights reserved unless a license file is added.

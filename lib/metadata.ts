@@ -14,7 +14,7 @@ const siteUrl = resolveSiteUrl()
 const siteName = 'Mike Attara'
 const defaultTitle = 'Mike Attara - Software Engineer'
 const defaultDescription = 'Building resilient systems and scalable platforms.'
-const defaultImage = '/icon.png'
+const defaultImage = '/og-image.png'
 
 const normalizedPath = (path: string) => {
   if (!path) return '/'
@@ -65,7 +65,7 @@ export const baseMetadata: Metadata = {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' },
       { url: '/icon.png', type: 'image/png', sizes: '512x512' },
-      { url: '/attara-mark.svg', type: 'image/svg+xml' },
+      { url: '/attara-mark.png', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
     apple: [{ url: '/apple-icon.png', type: 'image/png', sizes: '180x180' }],

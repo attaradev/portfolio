@@ -93,6 +93,11 @@ export const communityHighlights: CommunityHighlight[] = [
 
 export const certifications: Certification[] = [
   {
+    title: 'GitHub Copilot Certification',
+    description: 'Validated AI-assisted development practices and governance',
+    status: 'completed',
+  },
+  {
     title: 'AWS Certified Cloud Practitioner',
     description: 'Verified cloud fundamentals expertise',
     status: 'completed',
@@ -104,7 +109,17 @@ export const certifications: Certification[] = [
   },
   {
     title: 'AWS Certified Solutions Architect Associate',
-    description: 'Currently preparing for certification',
+    description: 'Validated architecture design expertise on AWS',
+    status: 'completed',
+  },
+  {
+    title: 'AWS Certified DevOps Engineer Professional',
+    description: 'Advancing automation, reliability, and governance at scale',
+    status: 'in-progress',
+  },
+  {
+    title: 'AWS Certified Solutions Architect Professional',
+    description: 'Deepening large-scale design and migration expertise',
     status: 'in-progress',
   },
 ]

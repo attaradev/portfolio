@@ -5,15 +5,15 @@ export const highlightStats: HighlightStat[] = [
   {
     icon: Cpu,
     label: 'Core tools',
-    value: 'Rails • Node',
-    description: 'Ruby on Rails, NestJS, Spring Boot in production. AWS and PostgreSQL at scale.',
+    value: 'AWS • K8s',
+    description: 'Kubernetes, Terraform, and CI/CD in production — with Rails, NestJS, and Go services on top.',
   },
   {
     icon: Globe2,
     label: 'Community',
-    value: '8+ groups',
+    value: 'AWS CB',
     description:
-      "GDG Accra, FOSUniverse, DjangoGirls, RailsGirls. Teaching what I've learned.",
+      'AWS Community Builder (Security). Facilitator with GDG Accra, DjangoGirls, and RailsGirls.',
   },
 ]
 
@@ -32,17 +32,17 @@ export const expertiseAreas: ExpertiseArea[] = [
     topics: ['Kubernetes', 'Docker', 'CI/CD', 'AWS', 'Terraform'],
   },
   {
+    icon: Lightbulb,
+    title: 'Cloud Security',
+    description:
+      'Least-privilege IAM, OIDC auth, PII-safe data workflows, and supply-chain auditing. Security as guardrails, not gates.',
+    topics: ['IAM', 'OIDC', 'PII Handling', 'Supply-Chain Security'],
+  },
+  {
     icon: Users,
     title: 'Engineering Leadership',
     description: 'Growing engineers, aligning teams, shipping while maintaining quality and sanity.',
     topics: ['Mentorship', 'Architecture Reviews', 'Code Review', 'RFCs'],
-  },
-  {
-    icon: Lightbulb,
-    title: 'Fintech & Payments',
-    description:
-      "Money movement that doesn't lose transactions. KYC, wallets, payment integrations built for compliance.",
-    topics: ['Payments', 'KYC/AML', 'Digital Wallets', 'Reconciliation'],
   },
 ]
 
@@ -68,6 +68,12 @@ export const workingPrinciples: WorkingPrinciple[] = [
 ]
 
 export const communityHighlights: CommunityHighlight[] = [
+  {
+    // TODO(mike): add your Community Builder cohort year
+    title: 'AWS Community Builder — Security',
+    description:
+      'Selected member of the AWS Community Builders program in the Security category, sharing cloud security practices with the builder community.',
+  },
   {
     title: 'Workshop facilitator',
     description:
@@ -129,7 +135,7 @@ export const aboutBio = {
   paragraph1:
     "I've spent years building backend systems where failure isn't abstract. Fintech transaction processing, AI assistants serving millions, KYC workflows where getting it wrong means compliance violations. The common thread: systems that need to work, stay up, and remain understandable as they scale.",
   paragraph2:
-    "My tools: Ruby on Rails, NestJS, PostgreSQL, AWS, Kubernetes. Event-driven architectures with NATS.io. I write TypeScript when the frontend needs it. But tools change. What stays constant is caring about the humans who operate these systems and the users who depend on them.",
+    "My tools: AWS, Kubernetes, Terraform, and Go on the platform side; Ruby on Rails, NestJS, and PostgreSQL for services; NATS.io for event-driven architectures. Security threads through all of it — least-privilege access, PII-safe data handling, supply-chain hygiene. Tools change; what stays constant is caring about the humans who operate these systems and the users who depend on them.",
   paragraph3:
     "Outside work, I teach. DjangoGirls, RailsGirls, GDG Accra, university workshops. The industry gave me a lot; I try to give some back.",
   blogLink: {

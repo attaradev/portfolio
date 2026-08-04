@@ -7,25 +7,25 @@ export const resumeIntro = {
 
 export const resumeHeader = {
   name: 'Mike Attara',
-  title: 'Platform Engineer',
+  title: 'Cloud & Platform Engineer',
   contact: {
     email: 'hello@attara.dev',
     website: 'attara.dev',
     github: 'github.com/attaradev',
     linkedin: 'linkedin.com/in/attaradev',
   },
-  location: 'Ghana (GMT) · Remote',
+  location: 'Accra, Ghana (GMT) · Remote',
 }
 
 export const professionalSummary =
-  'Platform engineer building reliable infrastructure, deployment pipelines, and observability systems. 5+ years shipping transaction systems, event-driven architectures, and DevOps automation for fintech and growth-stage companies. Systems processing millions with 99.9% measured uptime. Deep expertise: Kubernetes, Terraform, AWS, Ruby on Rails, NestJS. Technical depth plus mentorship and clear written communication. Open source: NatsPubsub (NATS JetStream library).'
+  'Cloud & Platform Engineer building secure, resilient infrastructure — deployment pipelines, observability systems, and the developer platforms teams ship on. AWS Community Builder (Security). 6+ years across fintech transaction systems, event-driven architectures, and DevOps automation; systems trusted with $2M+ monthly volume. Deep expertise: AWS, Kubernetes, Terraform, Ruby on Rails, Go. Open source: Ditto (PII-safe ephemeral databases), JetStream Bridge, NatsPubsub.'
 
 export const coreCompetencies = {
-  'Backend Development': 'Ruby on Rails, NestJS, Spring Boot, Node.js, TypeScript, Python, Go',
-  'Data & Messaging': 'PostgreSQL, Redis, MongoDB, NATS JetStream, Kafka, RabbitMQ, Event Sourcing',
-  'Cloud & Infrastructure': 'AWS (EC2, ECS, Lambda, RDS, S3, SQS), Docker, Kubernetes, Terraform',
-  'DevOps & Reliability': 'CI/CD (GitHub Actions, CircleCI), Observability (Grafana, Prometheus), SLO-based alerting',
-  'Architecture': 'Microservices, Event-Driven Systems, Transactional Outbox, API Design, Domain-Driven Design',
+  'Cloud & Infrastructure': 'AWS (EC2, ECS, EKS, Lambda, RDS, S3, SQS), Kubernetes, Terraform, Docker',
+  'Security': 'IAM least-privilege, OIDC, PII-safe data handling, supply-chain auditing, secure CI/CD',
+  'Backend Development': 'Ruby on Rails, NestJS, Node.js, TypeScript, Go, Python',
+  'Data & Messaging': 'PostgreSQL, Redis, NATS JetStream, Event Sourcing, Transactional Outbox',
+  'DevOps & Reliability': 'CI/CD (GitHub Actions), Observability (Grafana, Prometheus), SLO-based alerting',
 }
 
 export const resumeExperiences = [
@@ -38,6 +38,7 @@ export const resumeExperiences = [
       'Owning platform reliability and developer experience for auction infrastructure',
       'Building infrastructure automation and deployment pipelines that reduce release friction',
       'Implementing observability stack with metrics, logging, and alerting for production systems',
+      'Driving least-privilege access patterns and PII-safe data workflows across environments',
     ],
     technologies: 'Kubernetes, Terraform, AWS, CI/CD, Observability, Go, TypeScript, Node.js',
   },
@@ -66,10 +67,11 @@ export const resumeExperiences = [
     technologies: 'NestJS, Next.js, React, PostgreSQL, AWS, Event-Driven Architecture, TypeScript',
   },
   {
+    // TODO(mike): confirm employment type — dates overlap Wewire (from Dec 2022)
     title: 'Software Engineer',
     company: 'Vodafone',
     location: 'Accra, Ghana',
-    period: 'August 2021 – February 2023',
+    period: 'August 2021 – February 2023 · Contract',
     bullets: [
       "Maintained microservices powering TOBi, Vodafone's AI-powered digital assistant",
       'Implemented SLO-driven monitoring and alerting, improving service reliability',
@@ -102,15 +104,16 @@ export const resumeExperiences = [
 ]
 
 export const openSource = {
-  title: 'NatsPubsub',
+  title: 'Ditto · JetStream Bridge · NatsPubsub',
   role: 'Creator & Maintainer',
-  description: 'Production-grade pub/sub library for NATS JetStream in Ruby and TypeScript',
+  description:
+    'Platform and security tooling shipped to Homebrew, RubyGems, and npm — plus upstream contributions to cloud-infrastructure OSS (floci)',
   highlights: [
-    'Transactional outbox and idempotent inbox for exactly-once delivery',
-    'Rails-native generators, migrations, and health checks',
-    'Mock NATS for fast, infrastructure-free testing',
+    'Ditto (Go): ephemeral database copies with PII scrubbing and OIDC auth — keeps production data out of laptops and CI',
+    'JetStream Bridge (Ruby): exactly-once outbox/inbox pipelines with a least-privilege NATS permissions guide',
+    'NatsPubsub (Ruby + TypeScript): cross-language pub/sub with DLQs, retries, and automatic stream topology',
   ],
-  url: 'attaradev.github.io/nats-pubsub',
+  url: 'github.com/attaradev',
 }
 
 export const technicalWriting = {
@@ -128,8 +131,11 @@ export const certifications = [
   { name: 'AWS Certified Cloud Practitioner', status: 'completed' as const },
   { name: 'GitHub Copilot Certified', status: 'completed' as const },
   { name: 'Cybersecurity – ALX', status: 'completed' as const },
+  // TODO(mike): add your Community Builder cohort year
+  { name: 'AWS Community Builder – Security (current)', status: 'completed' as const },
 ]
 
+// TODO(mike): lib/structured-data.ts says University of Education, Winneba — confirm which is correct and align both files
 export const education = {
   degree: 'Bachelor of Education in Information Technology',
   institution: 'University of Cape Coast',

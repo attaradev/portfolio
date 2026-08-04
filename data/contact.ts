@@ -39,7 +39,7 @@ export type ContactIntent = typeof contactIntents[number]['id']
 export const intentFields: Record<ContactIntent, { label: string; placeholder: string; type?: string }[]> = {
   hiring: [
     { label: 'Company Name', placeholder: 'Acme Inc.' },
-    { label: 'Role Title', placeholder: 'Senior Backend Engineer' },
+    { label: 'Role Title', placeholder: 'Senior Platform Engineer' },
     { label: 'Team size and stage', placeholder: 'e.g., "Series A, 15 engineers, 3-person platform team"' },
     { label: 'What would I be working on in the first 90 days?', placeholder: 'Describe the initial focus areas and projects...', type: 'textarea' },
   ],

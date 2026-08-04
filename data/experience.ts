@@ -6,13 +6,13 @@ export const careerHighlights: CareerHighlight[] = [
     icon: Rocket,
     title: 'Scale & Reliability',
     description:
-      'Built event-driven and cloud-native platforms that process millions in transactions with 99.9% uptime.',
+      'Built event-driven, cloud-native platforms trusted with $2M+ in monthly transaction volume — with the observability to prove they stay up.',
   },
   {
     icon: BriefcaseBusiness,
-    title: 'Systems Architecture',
+    title: 'Platform & Security',
     description:
-      'Architect resilient microservices, integrations, and automation that keep complex operations aligned.',
+      'Ship infrastructure automation, least-privilege access, and PII-safe data workflows that make the secure path the default path.',
   },
   {
     icon: Users,
@@ -23,7 +23,7 @@ export const careerHighlights: CareerHighlight[] = [
 
 export const focusAreas = [
   'Platform Engineering',
-  'Backend Architecture',
+  'Cloud Security',
   'Event-Driven Systems',
   'Observability',
   'DevOps Automation',
@@ -35,6 +35,7 @@ export const experiences: Experience[] = [
     title: 'Platform Engineer',
     company: 'Purple Wave Auction',
     period: 'Nov 2025 - Present',
+    employmentType: 'Full-time',
     description:
       'Lead platform engineer owning reliability and developer experience. I build the internal tooling, CI/CD pipelines, and observability systems that enable the product engineering organization to ship confidently.',
     impact: 'Architecting the 99.9% reliability platform for high-stakes auction infrastructure',
@@ -50,6 +51,7 @@ export const experiences: Experience[] = [
     title: 'Backend Engineer',
     company: 'Purple Wave Auction (via DevOps Africa)',
     period: 'Sep 2024 - Nov 2025',
+    employmentType: 'Contract',
     description:
       'Built the engine for efficient equipment appraisal. Architected resilient backend services that handle real-time media uploads and keep data properly synced across the distributed auction system.',
     impact: 'Streamlined appraisal workflows, reducing data sync latency by 70%',
@@ -63,6 +65,7 @@ export const experiences: Experience[] = [
     title: 'Full Stack Software Engineer',
     company: 'Wewire Africa',
     period: 'Dec 2022 - Aug 2024',
+    employmentType: 'Full-time',
     description:
       'Core engineer for transaction processing systems. I designed and built the KYC workflows, digital wallet ledgers, and real-time payment integrations that served the platform\'s rapid growth.',
     impact: 'Scaled transaction engine to process millions with 99.9% availability',
@@ -73,9 +76,11 @@ export const experiences: Experience[] = [
     skills: ['NestJS', 'Next.js', 'React', 'PostgreSQL', 'AWS'],
   },
   {
+    // TODO(mike): confirm employment type — this overlaps Wewire (Dec 2022+) and Vodafone (to Feb 2023)
     title: 'Software Engineer',
     company: 'turntabl',
     period: 'Sep 2022 - May 2023',
+    employmentType: 'Contract',
     description:
       'Specialized engineering training and delivery. Developed internal tooling for content generation and collaborated on high-frequency trading components for global financial partners.',
     impact: 'Automated editorial content generation, reducing manual effort by 80%',
@@ -86,9 +91,11 @@ export const experiences: Experience[] = [
     skills: ['Java', 'Spring Boot', 'OpenAI', 'GSuite', 'Python', 'Design Patterns'],
   },
   {
+    // TODO(mike): confirm employment type — this overlaps turntabl and Wewire from Sep/Dec 2022
     title: 'Software Engineer',
     company: 'Vodafone',
     period: 'Aug 2021 - Feb 2023',
+    employmentType: 'Contract',
     description:
       "Maintained the critical microservices powering Vodafone's AI assistant (TOBi). Responsible for ensuring the high availability and performance of a system serving millions of requests.",
     impact:
@@ -103,11 +110,13 @@ export const experiences: Experience[] = [
     title: 'Software Developer',
     company: 'Self Employed (Freelance)',
     period: 'Sep 2019 - Dec 2022',
+    employmentType: 'Freelance',
     description:
-      'Delivered custom software solutions for clients in fintech and logistics. specialized in taking greenfield ideas to production-ready scalable cloud applications.',
-    impact: 'Delivered 10+ production applications with 100% client retention',
+      'Delivered custom software solutions for clients in fintech and logistics, specializing in taking greenfield ideas to production-ready, scalable cloud applications.',
+    // TODO(mike): restore a verified figure here if you can back it in interviews
+    impact: 'Delivered 10+ production applications for repeat clients',
     highlights: [
-      'Consulted on full-stack architecture for startups, helping them launching products within 3 months.',
+      'Consulted on full-stack architecture for startups, helping them launch products within months.',
       'Containerized legacy applications on AWS, reducing hosting costs and improving deploy reliability.',
     ],
     skills: ['React', 'Node.js', 'AWS', 'GraphQL', 'TypeScript'],
@@ -116,6 +125,7 @@ export const experiences: Experience[] = [
     title: 'Technical Team Lead',
     company: 'BloomTech',
     period: 'Mar 2020 - Aug 2020',
+    employmentType: 'Part-time',
     description:
       'Mentored a cohort of 11 engineering students. Facilitated code reviews, pair programming sessions, and daily standups to simulate a professional engineering environment.',
     impact: 'Improved student retention by 40% through targeted mentorship',
@@ -154,4 +164,4 @@ export const experiences: Experience[] = [
 ]
 
 export const experienceIntro =
-  'Platform engineer building reliable infrastructure, deployment pipelines, and observability systems. Previously shipped fintech transaction systems and AI-powered products. I mentor engineers and align technical decisions with business outcomes.'
+  'Cloud & platform engineer building reliable infrastructure, deployment pipelines, and observability systems — with security designed in. Previously shipped fintech transaction systems and AI-powered products. I mentor engineers and align technical decisions with business outcomes.'

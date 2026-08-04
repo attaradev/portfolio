@@ -202,6 +202,11 @@ export default function Experience() {
                           <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
                             <Calendar size={16} className="hidden sm:block" />
                             <span>{exp.period}</span>
+                            {exp.employmentType && (
+                              <span className="px-2 py-0.5 text-[11px] font-medium rounded-full border border-border/60 bg-card/60">
+                                {exp.employmentType}
+                              </span>
+                            )}
                           </div>
                         </div>
 

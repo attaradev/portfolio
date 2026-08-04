@@ -2,9 +2,9 @@ import { createMetadata } from '@/lib/metadata'
 import Resume from '@/components/resume'
 
 export const metadata = createMetadata({
-  title: 'Resume — Mike Attara | Senior Backend & Platform Engineer',
+  title: 'Resume — Mike Attara | Cloud & Platform Engineer',
   description:
-    'Senior backend engineer. Fintech transaction systems, event-driven architectures, DevOps automation. AWS certified.',
+    'Cloud & Platform Engineer. Secure infrastructure on AWS and Kubernetes, event-driven systems, DevOps automation. 4× certified, AWS Community Builder (Security).',
   path: '/resume',
   type: 'profile',
 })

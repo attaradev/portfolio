@@ -35,11 +35,31 @@ export interface Experience {
   title: string
   company: string
   period: string
+  employmentType?: 'Full-time' | 'Contract' | 'Part-time' | 'Freelance' | 'Internship'
   description: string
   impact: string
   highlights: string[]
   skills: string[]
   current?: boolean
+}
+
+export interface Project {
+  name: string
+  tagline: string
+  description: string
+  language: string
+  tags: string[]
+  repoUrl: string
+  docsUrl?: string
+  packages?: string[]
+  highlights: string[]
+  featured?: boolean
+}
+
+export interface ExternalContribution {
+  project: string
+  description: string
+  url: string
 }
 
 export interface CareerHighlight {

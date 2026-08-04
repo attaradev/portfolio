@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, ArrowUpRight, ExternalLink, Quote, BookOpen, Code2, MessageSquare } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, ExternalLink, BookOpen, Code2, MessageSquare } from 'lucide-react'
 import {
   heroContent,
   heroCtas,
@@ -9,7 +9,6 @@ import {
   whatIDo,
   featuredProject,
   writingHighlights,
-  testimonials,
   closingCta,
 } from '@/data/hero'
 import ScrollReveal from '@/components/ui/scroll-reveal'
@@ -121,24 +120,26 @@ export default function Hero() {
           </div>
 
           <p className="text-sm text-muted-foreground mb-6">
-            <strong className="text-foreground">Why it matters:</strong> Most teams either build brittle custom
-            messaging or adopt heavyweight frameworks. NatsPubsub provides battle-tested reliability patterns without
-            the operational overhead of Kafka.
+            <strong className="text-foreground">Why it matters:</strong> Seeding staging environments with production
+            dumps is how customer data ends up on laptops. Ditto makes the safe path the fast path — scrubbed,
+            disposable, and provisioned in seconds.
           </p>
 
           <div className="flex flex-wrap gap-3">
-            {featuredProject.links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-accent/30 rounded-full hover:bg-accent/10 hover:border-accent/60 transition-all"
-              >
-                {link.label}
-                <ExternalLink size={14} />
-              </a>
-            ))}
+            {featuredProject.links.map((link) => {
+              const isExternal = link.href.startsWith('http')
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-accent/30 rounded-full hover:bg-accent/10 hover:border-accent/60 transition-all"
+                >
+                  {link.label}
+                  {isExternal ? <ExternalLink size={14} /> : <ArrowRight size={14} />}
+                </a>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -175,32 +176,6 @@ export default function Hero() {
             Read more on the blog
             <ArrowRight size={14} />
           </a>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-12 sm:py-16 bg-card/30 border-y border-border/40">
-        <div className="max-w-4xl w-full mx-auto px-6 sm:px-8 lg:px-10">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-8">What People Say</h2>
-
-          <div className="space-y-6">
-            {testimonials.map((testimonial, index) => (
-              <ScrollReveal key={index} delay={index * 0.1}>
-                <div
-                  className="relative border border-border/40 rounded-xl p-6 bg-card/60 backdrop-blur-sm"
-                >
-                  <Quote size={24} className="absolute top-4 right-4 text-accent/20" />
-                  <p className="text-xs font-semibold uppercase tracking-widest text-accent mb-3">
-                    {testimonial.context}
-                  </p>
-                  <blockquote className="text-sm text-muted-foreground leading-relaxed mb-4 italic">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </blockquote>
-                  <cite className="text-sm font-medium text-foreground not-italic">— {testimonial.attribution}</cite>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 

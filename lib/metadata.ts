@@ -12,9 +12,9 @@ const resolveSiteUrl = () => {
 
 const siteUrl = resolveSiteUrl()
 const siteName = 'Mike Attara'
-const defaultTitle = 'Mike Attara — Senior Backend & Platform Engineer | Remote'
+const defaultTitle = 'Mike Attara — Cloud & Platform Engineer'
 const defaultDescription =
-  'Backend engineer. Fintech transaction systems, event-driven architectures, DevOps automation. 99.9% uptime, measured.'
+  'Cloud & Platform Engineer building secure, resilient infrastructure on AWS and Kubernetes. AWS Community Builder (Security). Open source: Ditto, JetStream Bridge, NatsPubsub.'
 const defaultImage = '/og-image.png'
 
 const normalizedPath = (path: string) => {
@@ -41,33 +41,37 @@ export const baseMetadata: Metadata = {
   description: defaultDescription,
   keywords: [
     // Primary keywords
+    'cloud platform engineer remote',
+    'platform engineer',
+    'cloud security engineer',
+    'DevSecOps engineer remote',
     'senior backend engineer remote',
-    'platform engineer fintech',
-    'staff engineer remote',
-    'event-driven architecture consultant',
-    'backend engineer payments',
-    'DevOps engineer remote',
+    'infrastructure engineer AWS',
     // Technical skills
-    'Ruby on Rails',
-    'NestJS',
-    'Node.js',
-    'TypeScript',
     'AWS',
     'Kubernetes',
-    'Docker',
+    'Terraform',
+    'Infrastructure as Code',
+    'IAM',
+    'CI/CD',
+    'Go',
+    'Ruby on Rails',
+    'TypeScript',
     'PostgreSQL',
     'NATS JetStream',
-    'Event Sourcing',
+    'Docker',
     // Domain expertise
-    'fintech systems',
-    'payment processing',
-    'transaction systems',
-    'microservices architecture',
+    'cloud security',
+    'supply chain security',
+    'platform engineering',
     'distributed systems',
+    'event-driven architecture',
     'observability',
     'SRE',
+    'fintech systems',
     // Brand
     'Mike Attara',
+    'AWS Community Builder',
     'attara.dev',
   ],
   authors: [{ name: 'Mike Attara', url: 'https://www.attara.dev' }],
@@ -97,7 +101,7 @@ export const baseMetadata: Metadata = {
         url: defaultImage,
         width: 1200,
         height: 630,
-        alt: 'Mike Attara - Senior Backend & Platform Engineer',
+        alt: 'Mike Attara — Cloud & Platform Engineer',
       },
     ],
   },

@@ -165,7 +165,8 @@ export function createMetadata({
   const ogImage = image ?? defaultImage
 
   return {
-    title: finalTitle,
+    // Absolute: every caller passes a complete title, so skip the root layout's '%s | Mike Attara' template
+    title: { absolute: finalTitle },
     description: finalDescription,
     alternates: {
       canonical: canonicalPath,

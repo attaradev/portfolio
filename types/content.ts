@@ -85,3 +85,109 @@ export interface NavItem {
   href: string
   description: string
 }
+
+export interface ProofStat {
+  value: string
+  label: string
+  context: string
+}
+
+export interface WhatIDo {
+  title: string
+  description: string
+}
+
+export interface FeaturedProject {
+  title: string
+  tagline: string
+  description: string
+  features: string[]
+  links: { label: string; href: string }[]
+}
+
+export interface WritingHighlight {
+  title: string
+  description: string
+}
+
+export interface Testimonial {
+  quote: string
+  context: string
+  attribution: string
+}
+
+export interface TargetRole {
+  title: string
+}
+
+export interface IdealCompany {
+  label: string
+  description: string
+}
+
+export interface Strength {
+  title: string
+  description: string
+}
+
+export interface First30Days {
+  period: string
+  items: string[]
+}
+
+export interface RemoteWorkStyle {
+  title: string
+  description: string
+}
+
+export interface CaseStudy {
+  id: string
+  title: string
+  outcome: string
+  context: string
+  problem: string[]
+  constraints: string[]
+  role: string
+  approach: {
+    phase: string
+    title: string
+    description: string
+  }[]
+  results: string[]
+  nextSteps: string
+  media?: {
+    type: 'image' | 'video'
+    src: string
+    alt: string
+    caption?: string
+  }[]
+}
+
+export interface HowIWorkSection {
+  id: string
+  title: string
+  description: string
+  items: {
+    title: string
+    description: string
+  }[]
+}
+
+export interface WorkValue {
+  title: string
+  description: string
+}
+
+export interface ResumeExperience {
+  title: string
+  company: string
+  location: string
+  period: string
+  bullets: string[]
+  technologies?: string
+}
+
+export interface ResumeSection {
+  title: string
+  items: string[]
+}

@@ -5,6 +5,8 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Home', href: '/', description: 'Overview and current focus' },
   { label: 'About', href: '/about', description: 'Story, principles, strengths' },
   { label: 'Experience', href: '/experience', description: 'Career journey and wins' },
+  { label: 'Case Studies', href: '/case-studies', description: 'Problems solved in depth' },
+  { label: 'Resume', href: '/resume', description: 'Credentials and history' },
   { label: 'Contact', href: '/contact', description: 'Start the conversation' },
 ]
 
@@ -15,19 +17,19 @@ export const socialLinks: SocialLink[] = [
   { icon: Mail, href: 'mailto:hello@attara.dev', label: 'Email' },
 ]
 
-export const focusAreas = ['Backend Architecture', 'DevOps Enablement', 'Technical Leadership']
+export const focusAreas = ['Platform Engineering', 'Backend Architecture', 'Technical Leadership']
 
 export const quickFacts = [
   {
-    label: 'Current role',
-    value: 'Backend Engineer · Purple Wave Auction',
+    label: 'Current',
+    value: 'Platform Engineer · Purple Wave Auction',
   },
   {
-    label: 'Time zone',
-    value: 'GMT · Remote partner across continents',
+    label: 'Timezone',
+    value: 'GMT · Remote globally',
   },
   {
-    label: 'Availability',
-    value: 'Advisory, platform builds, speaking',
+    label: 'Focus',
+    value: 'Platform reliability, developer experience, observability',
   },
 ]

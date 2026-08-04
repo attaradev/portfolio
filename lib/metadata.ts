@@ -12,8 +12,9 @@ const resolveSiteUrl = () => {
 
 const siteUrl = resolveSiteUrl()
 const siteName = 'Mike Attara'
-const defaultTitle = 'Mike Attara - Software Engineer'
-const defaultDescription = 'Building resilient systems and scalable platforms.'
+const defaultTitle = 'Mike Attara — Senior Backend & Platform Engineer | Remote'
+const defaultDescription =
+  'Backend engineer. Fintech transaction systems, event-driven architectures, DevOps automation. 99.9% uptime, measured.'
 const defaultImage = '/og-image.png'
 
 const normalizedPath = (path: string) => {
@@ -33,13 +34,20 @@ export const siteMetadata = {
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: defaultTitle,
+  title: {
+    default: defaultTitle,
+    template: '%s | Mike Attara',
+  },
   description: defaultDescription,
   keywords: [
-    'Backend Engineer',
-    'Platform Engineer',
-    'Software Engineer',
-    'DevOps Engineer',
+    // Primary keywords
+    'senior backend engineer remote',
+    'platform engineer fintech',
+    'staff engineer remote',
+    'event-driven architecture consultant',
+    'backend engineer payments',
+    'DevOps engineer remote',
+    // Technical skills
     'Ruby on Rails',
     'NestJS',
     'Node.js',
@@ -48,15 +56,19 @@ export const baseMetadata: Metadata = {
     'Kubernetes',
     'Docker',
     'PostgreSQL',
-    'Microservices',
-    'Event-Driven Architecture',
-    'Fintech',
-    'Payment Systems',
-    'Technical Leadership',
-    'System Architecture',
+    'NATS JetStream',
+    'Event Sourcing',
+    // Domain expertise
+    'fintech systems',
+    'payment processing',
+    'transaction systems',
+    'microservices architecture',
+    'distributed systems',
+    'observability',
+    'SRE',
+    // Brand
     'Mike Attara',
-    'Ghana Software Engineer',
-    'Backend Developer',
+    'attara.dev',
   ],
   authors: [{ name: 'Mike Attara', url: 'https://www.attara.dev' }],
   creator: 'Mike Attara',
@@ -85,7 +97,7 @@ export const baseMetadata: Metadata = {
         url: defaultImage,
         width: 1200,
         height: 630,
-        alt: `${defaultTitle} social share preview`,
+        alt: 'Mike Attara - Senior Backend & Platform Engineer',
       },
     ],
   },
@@ -95,6 +107,22 @@ export const baseMetadata: Metadata = {
     description: defaultDescription,
     images: [defaultImage],
     creator: '@attaradev',
+    site: '@attaradev',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add verification codes when available
+    // google: 'your-google-verification-code',
   },
 }
 
@@ -116,6 +144,7 @@ type CreateMetadataOptions = {
     | 'video.movie'
     | 'video.episode'
   image?: string
+  noIndex?: boolean
 }
 
 export function createMetadata({
@@ -124,9 +153,10 @@ export function createMetadata({
   path = '/',
   type = 'website',
   image,
+  noIndex = false,
 }: CreateMetadataOptions): Metadata {
   const canonicalPath = normalizedPath(path)
-  const finalTitle = title ? `${title} | ${siteName}` : defaultTitle
+  const finalTitle = title || defaultTitle
   const finalDescription = description ?? defaultDescription
   const ogImage = image ?? defaultImage
 
@@ -145,7 +175,9 @@ export function createMetadata({
       images: [
         {
           url: ogImage,
-          alt: `${finalTitle} social share preview`,
+          width: 1200,
+          height: 630,
+          alt: `${finalTitle}`,
         },
       ],
     },
@@ -155,5 +187,11 @@ export function createMetadata({
       description: finalDescription,
       images: [ogImage],
     },
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
   }
 }

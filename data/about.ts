@@ -1,142 +1,141 @@
-import { Code, Cpu, Globe2, Layers, Lightbulb, Sparkles, Target, Users, Zap } from 'lucide-react'
+import { Code, Cpu, Globe2, Lightbulb, Sparkles, Target, Users, Zap } from 'lucide-react'
 import type { HighlightStat, ExpertiseArea, WorkingPrinciple, CommunityHighlight, Certification } from '@/types/content'
 
 export const highlightStats: HighlightStat[] = [
   {
-    icon: Layers,
-    label: 'Production systems launched',
-    value: '25+',
-    description: 'Resilient services built across fintech, logistics, and telecom that stay performant under load.',
-  },
-  {
     icon: Cpu,
-    label: 'Core stack expertise',
+    label: 'Core tools',
     value: 'Rails • Node',
-    description: 'Architected platforms in Ruby on Rails, NestJS, and Spring Boot backed by AWS and PostgreSQL.',
+    description: 'Ruby on Rails, NestJS, Spring Boot in production. AWS and PostgreSQL at scale.',
   },
   {
     icon: Globe2,
-    label: 'Communities served',
-    value: '8+',
+    label: 'Community',
+    value: '8+ groups',
     description:
-      'Facilitator and mentor with GDG Accra, FOSUniverse, DjangoGirls, RailsGirls, and local tech collectives.',
+      "GDG Accra, FOSUniverse, DjangoGirls, RailsGirls. Teaching what I've learned.",
   },
 ]
 
 export const expertiseAreas: ExpertiseArea[] = [
   {
     icon: Code,
-    title: 'Backend Architecture',
+    title: 'Backend Systems',
     description:
-      'Designing resilient, scalable systems with microservices, event-driven architecture, and cloud-native solutions.',
-    topics: ['Microservices', 'Event-Driven Systems', 'API Design', 'Database Architecture'],
+      'Distributed systems that stay up. Microservices, event-driven patterns, APIs designed for the long haul.',
+    topics: ['Microservices', 'Event-Driven', 'API Design', 'Data Modeling'],
   },
   {
     icon: Zap,
-    title: 'DevOps & Infrastructure',
-    description: 'Building robust CI/CD pipelines, container orchestration, and infrastructure automation at scale.',
-    topics: ['Kubernetes', 'Docker', 'CI/CD', 'AWS', 'Infrastructure as Code'],
+    title: 'Platform & DevOps',
+    description: 'CI/CD, containers, infrastructure as code. The automation layer that makes teams faster.',
+    topics: ['Kubernetes', 'Docker', 'CI/CD', 'AWS', 'Terraform'],
   },
   {
     icon: Users,
-    title: 'Team Leadership',
-    description: 'Mentoring engineers, building high-performing teams, and fostering inclusive tech communities.',
-    topics: ['Mentorship', 'Team Building', 'Code Review', 'Knowledge Sharing'],
+    title: 'Engineering Leadership',
+    description: 'Growing engineers, aligning teams, shipping while maintaining quality and sanity.',
+    topics: ['Mentorship', 'Architecture Reviews', 'Code Review', 'RFCs'],
   },
   {
     icon: Lightbulb,
     title: 'Fintech & Payments',
     description:
-      'Crafting secure, compliant payment systems, KYC workflows, and digital wallet solutions with third-party integrations.',
-    topics: ['Payment Processing', 'KYC/AML', 'Digital Wallets', 'Transaction Systems'],
+      "Money movement that doesn't lose transactions. KYC, wallets, payment integrations built for compliance.",
+    topics: ['Payments', 'KYC/AML', 'Digital Wallets', 'Reconciliation'],
   },
 ]
 
 export const workingPrinciples: WorkingPrinciple[] = [
   {
     icon: Target,
-    title: 'Outcome-driven architecture',
+    title: 'Business first',
     description:
-      'Start with the business constraint, model the lifecycle, then align engineering bets with measurable results.',
+      'Engineering serves outcomes. I start with the constraint, not the technology.',
   },
   {
     icon: Sparkles,
-    title: 'Operational empathy',
+    title: 'Built for 3 AM',
     description:
-      'Design for the humans on-call by investing in clarity, observability, and progressive delivery practices.',
+      'Every system I ship, I ask: "What happens when this breaks at 3 AM?" Then I build accordingly.',
   },
   {
     icon: Users,
-    title: 'Scale people with systems',
+    title: 'Leave it better',
     description:
-      'Coach through pairing, reviews, and playbooks so teams can sustain velocity long after the initial launch.',
+      "Code, docs, people. The goal is a team that's stronger after I leave than when I arrived.",
   },
 ]
 
 export const communityHighlights: CommunityHighlight[] = [
   {
-    title: 'Inclusive tech facilitator',
+    title: 'Workshop facilitator',
     description:
-      'Mentor aspiring engineers through DjangoGirls, RailsGirls, and university outreach programs focused on practical software delivery.',
+      'DjangoGirls, RailsGirls, university programs. Hands-on teaching for engineers breaking in.',
   },
   {
-    title: 'Conference & meetup speaker',
+    title: 'Speaker',
     description:
-      'Share lessons on architecture, DevOps culture, and developer enablement within GDG Accra, FOSUniverse, and partner events.',
+      'GDG Accra, FOSUniverse. Talks on architecture, operations, and building engineering culture.',
   },
   {
-    title: 'Writer & knowledge sharer',
+    title: 'Writer',
     description:
-      'Document systems design field notes, leadership insights, and developer workflows on blog.attara.dev to grow the community.',
+      "Field notes at blog.attara.dev. What I've learned building systems that matter.",
   },
 ]
 
 export const certifications: Certification[] = [
   {
-    title: 'GitHub Copilot Certification',
-    description: 'Validated AI-assisted development practices and governance',
+    title: 'AWS Solutions Architect Associate',
+    description: 'Architecture design on AWS',
     status: 'completed',
   },
   {
-    title: 'AWS Certified Cloud Practitioner',
-    description: 'Verified cloud fundamentals expertise',
+    title: 'AWS Developer Associate',
+    description: 'Application development on AWS',
     status: 'completed',
   },
   {
-    title: 'AWS Certified Developer Associate',
-    description: 'Demonstrated development expertise on AWS',
+    title: 'AWS Cloud Practitioner',
+    description: 'Cloud fundamentals',
     status: 'completed',
   },
   {
-    title: 'AWS Certified Solutions Architect Associate',
-    description: 'Validated architecture design expertise on AWS',
+    title: 'GitHub Copilot',
+    description: 'AI-assisted development practices',
     status: 'completed',
   },
   {
-    title: 'AWS Certified DevOps Engineer Professional',
-    description: 'Advancing automation, reliability, and governance at scale',
+    title: 'Cybersecurity',
+    description: 'ALX Africa',
+    status: 'completed',
+  },
+  {
+    title: 'AWS DevOps Engineer Professional',
+    description: 'Automation and reliability at scale',
     status: 'in-progress',
   },
   {
-    title: 'AWS Certified Solutions Architect Professional',
-    description: 'Deepening large-scale design and migration expertise',
+    title: 'AWS Solutions Architect Professional',
+    description: 'Complex architecture and migration',
     status: 'in-progress',
   },
 ]
 
 export const aboutBio = {
   intro:
-    'My journey began in the classroom, teaching science and mathematics and the principles I practiced there still guide how I engineer software today.',
+    "I started in a classroom, teaching science and mathematics. Explaining complex ideas to people who hadn't seen them before. That's still how I approach engineering: clear thinking, clear communication, systems that make sense to the next person.",
   paragraph1:
-    'Over the years, I have designed, built, and scaled systems across fintech, logistics, and telecom — delivering high-impact features like AI agents, KYC workflows, digital wallets, virtual cards, and real-time transaction processing serving thousands of users. I specialize in resilient backend architecture, designing systems that prioritize performance, scalability, long-term maintainability, and measurable user value.',
+    "I've spent years building backend systems where failure isn't abstract. Fintech transaction processing, AI assistants serving millions, KYC workflows where getting it wrong means compliance violations. The common thread: systems that need to work, stay up, and remain understandable as they scale.",
   paragraph2:
-    'My toolkit includes Ruby on Rails, NestJS (Node.js), Spring Boot, Docker, Kubernetes, AWS, and PostgreSQL. I have led the design of event-driven systems using tools like NATS.io and integrated mission-critical services ranging from payments to identity verification. On the frontend, I craft modern interfaces with React, Next.js, and TypeScript.',
+    "My tools: Ruby on Rails, NestJS, PostgreSQL, AWS, Kubernetes. Event-driven architectures with NATS.io. I write TypeScript when the frontend needs it. But tools change. What stays constant is caring about the humans who operate these systems and the users who depend on them.",
   paragraph3:
-    'Beyond code, I lead through mentorship and community building. I hold a B.Ed. in Information Technology Education and regularly contribute to inclusive tech spaces like GDG Accra and FOSUniverse, while facilitating learning through DjangoGirls and RailsGirls workshops.',
+    "Outside work, I teach. DjangoGirls, RailsGirls, GDG Accra, university workshops. The industry gave me a lot; I try to give some back.",
   blogLink: {
-    text: 'my blog',
-    url: 'https://blog.attara.dev',
-    context: 'I also share insights and field notes on',
-    continuation: ', exploring systems architecture, DevOps, and technical leadership.',
+    text: "blog.attara.dev",
+    url: "https://blog.attara.dev",
+    context: "I write about what I learn at",
+    continuation: ": architecture decisions, operational lessons, leadership notes.",
   },
 }

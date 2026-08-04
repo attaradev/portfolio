@@ -2,9 +2,9 @@ import { createMetadata } from "@/lib/metadata"
 import About from "@/components/about"
 
 export const metadata = createMetadata({
-  title: "About",
+  title: "About Mike Attara — Backend Engineer, DevOps, Technical Leadership",
   description:
-    "Explore Mike Attara's journey as a backend architect, DevOps leader, and community mentor building resilient platforms across industries.",
+    "Fintech systems, event-driven architecture, engineering mentorship. AWS certified. Open source maintainer.",
   path: "/about",
   type: "profile",
 })

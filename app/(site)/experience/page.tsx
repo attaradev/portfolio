@@ -2,10 +2,11 @@ import { createMetadata } from "@/lib/metadata"
 import Experience from "@/components/experience"
 
 export const metadata = createMetadata({
-  title: "Experience",
+  title: "Experience — Mike Attara | Fintech, Payments, Platform Engineering",
   description:
-    "Dive into Mike Attara's record of shipping resilient backend platforms, event-driven systems, and DevOps automation across fintech, telecom, and global teams.",
+    "Transaction systems, AI assistants, event-driven platforms. Vodafone, Wewire Africa, Purple Wave Auction.",
   path: "/experience",
+  type: "profile",
 })
 
 export default function ExperiencePage() {

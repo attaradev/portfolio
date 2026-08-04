@@ -3,11 +3,17 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import { baseMetadata } from '@/lib/metadata'
-import { getPersonStructuredData, generateStructuredDataScript } from '@/lib/structured-data'
+import { getHomepageStructuredData, generateStructuredDataScript } from '@/lib/structured-data'
 import './globals.css'
 
-const _geist = Geist({ subsets: ['latin'] })
-const _geistMono = Geist_Mono({ subsets: ['latin'] })
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-sans',
+})
+const geistMono = Geist_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+})
 
 export const metadata = baseMetadata
 
@@ -16,17 +22,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const structuredData = getPersonStructuredData()
+  const structuredData = getHomepageStructuredData()
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: generateStructuredDataScript(structuredData) }}
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body
+        className={`${geist.variable} ${geistMono.variable} font-sans antialiased text-foreground bg-background`}
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           {children}
           <Analytics />

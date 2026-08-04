@@ -6,7 +6,9 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.attara.dev'
-  const lastModified = new Date()
+  // Fixed date, updated on meaningful content changes — new Date() would claim
+  // every page was modified at every build, which crawlers learn to ignore.
+  const lastModified = new Date('2026-08-04')
 
   const staticRoutes = [
     {

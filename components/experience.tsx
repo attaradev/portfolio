@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { careerHighlights, focusAreas, experiences, experienceIntro } from '@/data/experience'
 import Breadcrumbs from '@/components/breadcrumbs'
+import ScrollReveal from '@/components/ui/scroll-reveal'
 
 export default function Experience() {
   const [selectedSkill, setSelectedSkill] = useState<string | null>(null)
@@ -44,27 +45,27 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-10">
         <Breadcrumbs />
         <div className="mb-8 sm:mb-12">
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-balance">Experience</h3>
-          <div className="w-12 h-1 bg-accent rounded-full"></div>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mt-6 leading-relaxed">{experienceIntro}</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Experience</h1>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">{experienceIntro}</p>
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 mb-8 sm:mb-10">
-          {careerHighlights.map((item) => {
+          {careerHighlights.map((item, index) => {
             const Icon = item.icon
             return (
-              <div
-                key={item.title}
-                className="group border border-border/50 rounded-xl p-6 hover:border-accent/50 hover:bg-card/50 transition-all duration-300 smooth-transition hover-lift"
-              >
-                <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent/20 transition-colors">
-                  <Icon size={20} />
+              <ScrollReveal key={item.title} delay={index * 0.1}>
+                <div
+                  className="group border border-border/50 rounded-xl p-6 hover:border-accent/50 hover:bg-card/50 transition-all duration-300 smooth-transition hover-lift h-full"
+                >
+                  <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center mb-4 text-accent group-hover:bg-accent/20 transition-colors">
+                    <Icon size={20} />
+                  </div>
+                  <h4 className="text-lg font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 </div>
-                <h4 className="text-lg font-semibold mb-2 text-foreground group-hover:text-accent transition-colors">
-                  {item.title}
-                </h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-              </div>
+              </ScrollReveal>
             )
           })}
         </div>
@@ -126,11 +127,10 @@ export default function Experience() {
                     setSelectedSkill(skill)
                     setShowFilters(false)
                   }}
-                  className={`px-3 py-1.5 text-xs rounded-full font-medium transition-all ${
-                    selectedSkill === skill
-                      ? 'bg-accent text-accent-foreground border border-accent'
-                      : 'bg-accent/10 text-accent border border-accent/20 hover:border-accent/50 hover:bg-accent/20'
-                  }`}
+                  className={`px-3 py-1.5 text-xs rounded-full font-medium transition-all ${selectedSkill === skill
+                    ? 'bg-accent text-accent-foreground border border-accent'
+                    : 'bg-accent/10 text-accent border border-accent/20 hover:border-accent/50 hover:bg-accent/20'
+                    }`}
                 >
                   {skill}
                 </button>
@@ -185,69 +185,75 @@ export default function Experience() {
               filteredExperiences.map((exp, idx) => {
                 const isCurrentRole = exp.period.toLowerCase().includes('present')
                 return (
-                  <article key={`${exp.title}-${idx}`} className="relative md:pl-16">
-                    <div className="hidden md:flex absolute left-0 top-1 w-10 h-10 items-center justify-center rounded-full border border-border/70 bg-background text-accent">
-                      <BriefcaseBusiness size={18} />
-                    </div>
-
-                    <div className="group border border-border/50 rounded-xl p-6 hover:border-accent/50 hover:bg-card/50 transition-all duration-300 smooth-transition hover-lift">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                        <div>
-                          <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
-                            {exp.title}
-                          </h4>
-                          <p className="text-accent font-medium text-sm mt-1">{exp.company}</p>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
-                          <Calendar size={16} className="hidden sm:block" />
-                          <span>{exp.period}</span>
-                        </div>
+                  <ScrollReveal key={`${exp.title}-${idx}`} delay={idx * 0.1}>
+                    <article className="relative md:pl-16">
+                      <div className="hidden md:flex absolute left-0 top-1 w-10 h-10 items-center justify-center rounded-full border border-border/70 bg-background text-accent">
+                        <BriefcaseBusiness size={18} />
                       </div>
 
-                      {isCurrentRole && (
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-accent bg-accent/10 border border-accent/30 rounded-full px-3 py-1 mb-3">
-                          <Sparkles size={12} />
-                          Current Role
-                        </span>
-                      )}
+                      <div className="group border border-border/50 rounded-xl p-6 hover:border-accent/50 hover:bg-card/50 transition-all duration-300 smooth-transition hover-lift">
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                          <div>
+                            <h4 className="text-xl font-semibold group-hover:text-accent transition-colors">
+                              {exp.title}
+                            </h4>
+                            <p className="text-accent font-medium text-sm mt-1">{exp.company}</p>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
+                            <Calendar size={16} className="hidden sm:block" />
+                            <span>{exp.period}</span>
+                            {exp.employmentType && (
+                              <span className="px-2 py-0.5 text-[11px] font-medium rounded-full border border-border/60 bg-card/60">
+                                {exp.employmentType}
+                              </span>
+                            )}
+                          </div>
+                        </div>
 
-                      <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
+                        {isCurrentRole && (
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-widest text-accent bg-accent/10 border border-accent/30 rounded-full px-3 py-1 mb-3">
+                            <Sparkles size={12} />
+                            Current Role
+                          </span>
+                        )}
 
-                      <div className="flex items-start md:items-center gap-3 text-sm font-medium text-accent mb-4">
-                        <LineChart size={16} />
-                        <span>{exp.impact}</span>
-                      </div>
+                        <p className="text-muted-foreground leading-relaxed mb-4">{exp.description}</p>
 
-                      {exp.highlights?.length > 0 && (
-                        <ul className="space-y-2 text-sm text-muted-foreground mb-4">
-                          {exp.highlights.map((highlight) => (
-                            <li key={highlight} className="flex gap-2">
-                              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0"></span>
-                              <span>{highlight}</span>
-                            </li>
+                        <div className="flex items-start md:items-center gap-3 text-sm font-medium text-accent mb-4">
+                          <LineChart size={16} />
+                          <span>{exp.impact}</span>
+                        </div>
+
+                        {exp.highlights?.length > 0 && (
+                          <ul className="space-y-2 text-sm text-muted-foreground mb-4">
+                            {exp.highlights.map((highlight) => (
+                              <li key={highlight} className="flex gap-2">
+                                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent flex-shrink-0"></span>
+                                <span>{highlight}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+
+                        <div className="flex flex-wrap gap-2">
+                          {exp.skills.map((skill) => (
+                            <button
+                              key={skill}
+                              type="button"
+                              onClick={() => setSelectedSkill(skill)}
+                              className={`px-3 py-1 text-xs rounded-full font-medium border transition-all smooth-transition ${selectedSkill === skill
+                                  ? 'bg-accent text-accent-foreground border-accent shadow-sm'
+                                  : 'bg-accent/10 text-accent border-accent/20 hover:border-accent/50 hover:bg-accent/20'
+                                }`}
+                              title={`Filter by ${skill}`}
+                            >
+                              {skill}
+                            </button>
                           ))}
-                        </ul>
-                      )}
-
-                      <div className="flex flex-wrap gap-2">
-                        {exp.skills.map((skill) => (
-                          <button
-                            key={skill}
-                            type="button"
-                            onClick={() => setSelectedSkill(skill)}
-                            className={`px-3 py-1 text-xs rounded-full font-medium border transition-all smooth-transition ${
-                              selectedSkill === skill
-                                ? 'bg-accent text-accent-foreground border-accent shadow-sm'
-                                : 'bg-accent/10 text-accent border-accent/20 hover:border-accent/50 hover:bg-accent/20'
-                            }`}
-                            title={`Filter by ${skill}`}
-                          >
-                            {skill}
-                          </button>
-                        ))}
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </ScrollReveal>
                 )
               })
             )}

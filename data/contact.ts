@@ -1,40 +1,98 @@
-import { BookOpen, CalendarDays, Clock, Github, Handshake, Instagram, Linkedin, Twitter } from 'lucide-react'
-import type { CollaborationPath, ContactHighlight, SocialLink } from '@/types/content'
+import { BookOpen, CalendarDays, Clock, Github, Handshake, Linkedin, Twitter, Briefcase, MessageSquare, Mic, HelpCircle } from 'lucide-react'
+import type { ContactHighlight, SocialLink } from '@/types/content'
 
-export const collaborationAreas: CollaborationPath[] = [
+export const contactIntro = {
+  headline: 'Start a conversation.',
+  description:
+    'Architecture challenges, consulting, collaboration. I read every message and respond within 48 hours.',
+}
+
+export const contactIntents = [
   {
-    title: 'Architecture sprints',
-    description: 'Partner on platform design reviews, scaling strategies, and event-driven roadmaps.',
+    id: 'hiring',
+    icon: Briefcase,
+    label: 'Full-Time Role',
+    description: "Remote backend, platform, or reliability role. Let's discuss fit.",
   },
   {
-    title: 'DevOps & platform enablement',
-    description: 'Automate delivery pipelines, observability, and infrastructure so teams ship with confidence.',
+    id: 'consulting',
+    icon: MessageSquare,
+    label: 'Consulting',
+    description: 'Architecture challenge, DevOps initiative, or technical review needing outside eyes.',
   },
   {
-    title: 'Technical leadership support',
-    description: 'Coach squads, refine engineering practices, and align delivery with product and business goals.',
+    id: 'speaking',
+    icon: Mic,
+    label: 'Speaking',
+    description: 'Conference, meetup, or internal workshop. I speak on architecture, DevOps, and engineering leadership.',
   },
   {
-    title: 'Speaking & workshops',
-    description: 'Facilitate sessions on systems design, DevOps culture, and inclusive engineering leadership.',
+    id: 'other',
+    icon: HelpCircle,
+    label: 'Other',
+    description: 'Question, open source collaboration, or just want to connect.',
   },
+] as const
+
+export type ContactIntent = typeof contactIntents[number]['id']
+
+export const intentFields: Record<ContactIntent, { label: string; placeholder: string; type?: string }[]> = {
+  hiring: [
+    { label: 'Company Name', placeholder: 'Acme Inc.' },
+    { label: 'Role Title', placeholder: 'Senior Platform Engineer' },
+    { label: 'Team size and stage', placeholder: 'e.g., "Series A, 15 engineers, 3-person platform team"' },
+    { label: 'What would I be working on in the first 90 days?', placeholder: 'Describe the initial focus areas and projects...', type: 'textarea' },
+  ],
+  consulting: [
+    { label: 'Company Name (optional)', placeholder: 'Acme Inc.' },
+    { label: 'What\'s the challenge or project?', placeholder: 'Brief description of what you\'re trying to accomplish...', type: 'textarea' },
+  ],
+  speaking: [
+    { label: 'Organization / Event Name', placeholder: 'DevConf 2024' },
+    { label: 'Event Date', placeholder: 'March 15, 2024' },
+    { label: 'What topic are you interested in?', placeholder: 'e.g., "Event-driven architecture patterns", "Building observability from scratch"', type: 'textarea' },
+  ],
+  other: [
+    { label: 'What would you like to discuss?', placeholder: 'Tell me what\'s on your mind...', type: 'textarea' },
+  ],
+}
+
+export const consultingOptions = {
+  timeline: [
+    { value: 'urgent', label: 'Urgent (within 2 weeks)' },
+    { value: 'near-term', label: 'Near-term (1-2 months)' },
+    { value: 'planning', label: 'Planning phase (no immediate deadline)' },
+  ],
+  engagement: [
+    { value: 'review', label: 'Architecture review / audit' },
+    { value: 'implementation', label: 'Hands-on implementation' },
+    { value: 'advisory', label: 'Advisory / ongoing consultation' },
+    { value: 'unsure', label: 'Not sure yet' },
+  ],
+}
+
+export const speakingFormats = [
+  { value: 'conference', label: 'Conference talk' },
+  { value: 'meetup', label: 'Meetup presentation' },
+  { value: 'workshop', label: 'Internal workshop' },
+  { value: 'podcast', label: 'Podcast / interview' },
 ]
 
-export const contactHighlights: ContactHighlight[] = [
+export const contactExpectations: ContactHighlight[] = [
   {
     icon: Clock,
-    title: 'Response window',
-    description: 'Replies within 48 hours Monday through Friday.',
+    title: 'Response',
+    description: 'Within 48 hours, Monday through Friday. I read everything.',
   },
   {
     icon: CalendarDays,
-    title: 'Time zone',
-    description: 'Based in GMT—collaborating across North America, Europe, and Africa.',
+    title: 'Timezone',
+    description: 'GMT-based. Regular overlap with North America, Europe, Africa. Flexible on sync time.',
   },
   {
     icon: Handshake,
-    title: 'Collaboration style',
-    description: 'Hands-on partnership from discovery to delivery with clear communication along the way.',
+    title: 'Next steps',
+    description: "Full-time: I'll review and respond with availability. Consulting: clarifying questions first, then scope discussion.",
   },
 ]
 
@@ -57,21 +115,14 @@ export const socialLinks: SocialLink[] = [
     icon: Linkedin,
     label: 'LinkedIn',
     helper: 'Professional updates & network',
-    cta: 'Connect on LinkedIn',
+    cta: 'Connect',
     href: 'https://linkedin.com/in/attaradev',
-  },
-  {
-    icon: Instagram,
-    label: 'Instagram',
-    helper: 'Behind-the-scenes & highlights',
-    cta: 'Follow on Instagram',
-    href: 'https://instagram.com/attaradev',
   },
   {
     icon: Twitter,
     label: 'Twitter',
-    helper: 'Thoughts on engineering & community',
-    cta: 'Follow updates',
+    helper: 'Thoughts on engineering',
+    cta: 'Follow',
     href: 'https://twitter.com/attaradev',
   },
 ]

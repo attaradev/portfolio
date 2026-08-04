@@ -3,11 +3,21 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://www.attara.dev'
+
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: 'https://www.attara.dev/sitemap.xml',
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: [
+          '/api/',
+          '/_next/',
+          '/static/',
+        ],
+      },
+    ],
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }

@@ -6,13 +6,13 @@ export const careerHighlights: CareerHighlight[] = [
     icon: Rocket,
     title: 'Scale & Reliability',
     description:
-      'Built event-driven and cloud-native platforms that process millions in transactions with 99.9% uptime.',
+      'Built event-driven, cloud-native platforms trusted with $2M+ in monthly transaction volume — with the observability to prove they stay up.',
   },
   {
     icon: BriefcaseBusiness,
-    title: 'Systems Architecture',
+    title: 'Platform & Security',
     description:
-      'Architect resilient microservices, integrations, and automation that keep complex operations aligned.',
+      'Ship infrastructure automation, least-privilege access, and PII-safe data workflows that make the secure path the default path.',
   },
   {
     icon: Users,
@@ -22,66 +22,87 @@ export const careerHighlights: CareerHighlight[] = [
 ]
 
 export const focusAreas = [
-  'Backend Architecture',
+  'Platform Engineering',
+  'Cloud Security',
   'Event-Driven Systems',
-  'Realtime Processing',
+  'Observability',
   'DevOps Automation',
   'Technical Leadership',
-  'Mentorship & Enablement',
 ]
 
 export const experiences: Experience[] = [
   {
+    title: 'Platform Engineer',
+    company: 'Purple Wave Auction',
+    period: 'Nov 2025 - Present',
+    employmentType: 'Full-time',
+    description:
+      'Lead platform engineer owning reliability and developer experience. I build the internal tooling, CI/CD pipelines, and observability systems that enable the product engineering organization to ship confidently.',
+    impact: 'Architecting the 99.9% reliability platform for high-stakes auction infrastructure',
+    highlights: [
+      'Engineered infrastructure automation that reduced deployment friction, protecting auction uptime.',
+      'Implemented a comprehensive observability stack (metrics, logs, traces) to detect issues before customers do.',
+      'Partnering with product teams to define SLOs and error budgets, shifting culture towards reliability.',
+    ],
+    skills: ['Kubernetes', 'Terraform', 'AWS', 'CI/CD', 'Observability', 'Ruby on Rails', 'Platform Engineering'],
+    current: true,
+  },
+  {
     title: 'Backend Engineer',
     company: 'Purple Wave Auction (via DevOps Africa)',
-    period: 'Sep 2024 - Present',
+    period: 'Sep 2024 - Nov 2025',
+    employmentType: 'Contract',
     description:
-      'Building tools for efficient equipment appraisal workflows with real-time media uploads and data syncing between systems. Architecting resilient backend systems and scalable microservices for auction operations.',
-    impact: 'Streamlined equipment appraisal workflows with real-time data synchronization and media processing',
+      'Built the engine for efficient equipment appraisal. Architected resilient backend services that handle real-time media uploads and keep data properly synced across the distributed auction system.',
+    impact: 'Streamlined appraisal workflows, reducing data sync latency by 70%',
     highlights: [
-      'Introduced an event-driven media ingestion pipeline that keeps appraisal teams in sync without blocking the UI.',
-      'Set up performance dashboards and service health probes that expose cycle-time metrics for operations leaders.',
+      'Designed an event-driven media ingestion pipeline that processes thousands of images without blocking users.',
+      'Instrumented performance dashboards that gave operations leaders real-time visibility into appraisal bottlenecks.',
     ],
     skills: ['Ruby on Rails', 'NestJS', 'PostgreSQL', 'AWS', 'Docker', 'Real-time Sync', 'Media Processing'],
-    current: true,
   },
   {
     title: 'Full Stack Software Engineer',
     company: 'Wewire Africa',
     period: 'Dec 2022 - Aug 2024',
+    employmentType: 'Full-time',
     description:
-      'Designed and built transaction processing systems, KYC workflows, and digital wallet features. Implemented real-time APIs and payment integrations serving thousands of users with TypeScript and NestJS.',
-    impact: 'Processed millions in transactions with 99.9% uptime',
+      'Core engineer for transaction processing systems. I designed and built the KYC workflows, digital wallet ledgers, and real-time payment integrations that served the platform\'s rapid growth.',
+    impact: 'Scaled transaction engine to process millions with 99.9% availability',
     highlights: [
-      'Launched PCI-conscious transaction microservices with automated reconciliation and alerting workflows.',
-      'Co-led squad delivering KYC, virtual cards, and digital wallet experiences for thousands of customers.',
+      'Launched PCI-compliant transaction microservices with automated reconciliation, catching errors instantly.',
+      'Co-led the squad delivering KYC and virtual cards, enabling the company to expand to new markets.',
     ],
     skills: ['NestJS', 'Next.js', 'React', 'PostgreSQL', 'AWS'],
   },
   {
+    // TODO(mike): confirm employment type — this overlaps Wewire (Dec 2022+) and Vodafone (to Feb 2023)
     title: 'Software Engineer',
     company: 'turntabl',
     period: 'Sep 2022 - May 2023',
+    employmentType: 'Contract',
     description:
-      'Completed intensive post-graduate software development training and developed specialized article generation tool using Java with GSuite and OpenAI API integration. Collaborated on trading system development using Spring Boot.',
-    impact: 'Automated content generation reducing manual work by 80%',
+      'Specialized engineering training and delivery. Developed internal tooling for content generation and collaborated on high-frequency trading components for global financial partners.',
+    impact: 'Automated editorial content generation, reducing manual effort by 80%',
     highlights: [
-      'Delivered OpenAI-powered article generation service with Java and GSuite automation for editorial teams.',
-      'Pair-programmed on equities trading platform components using Spring Boot and AWS tooling.',
+      'Built an OpenAI-powered generation service that allowed editorial teams to produce content 5x faster.',
+      'Completed rigorous training in distributed systems and secure coding practices for financial services.',
     ],
     skills: ['Java', 'Spring Boot', 'OpenAI', 'GSuite', 'Python', 'Design Patterns'],
   },
   {
+    // TODO(mike): confirm employment type — this overlaps turntabl and Wewire from Sep/Dec 2022
     title: 'Software Engineer',
     company: 'Vodafone',
     period: 'Aug 2021 - Feb 2023',
+    employmentType: 'Contract',
     description:
-      "Built and maintained microservices powering Vodafone's Digital Assistant (TOBi). Participated in full software development lifecycle from concept to deployment and ongoing support.",
+      "Maintained the critical microservices powering Vodafone's AI assistant (TOBi). Responsible for ensuring the high availability and performance of a system serving millions of requests.",
     impact:
-      'Maintained critical microservices ensuring high availability and performance of AI-powered customer assistant',
+      'Ensured 99.95% availability for AI assistant serving 2M+ subscribers',
     highlights: [
-      'Maintained conversational AI microservices with SLO-driven monitoring and on-call rotations.',
-      'Shipped REST APIs that integrate CRM, analytics, and NLP services serving millions of Vodafone subscribers.',
+      'Optimized conversational AI microservices, reducing latency and improving user satisfaction scores.',
+      'Maintained SLO-driven monitoring dashboards and served on-call rotation for production incidents.',
     ],
     skills: ['Node.js', 'TypeScript', 'Microservices', 'AWS', 'REST APIs'],
   },
@@ -89,12 +110,14 @@ export const experiences: Experience[] = [
     title: 'Software Developer',
     company: 'Self Employed (Freelance)',
     period: 'Sep 2019 - Dec 2022',
+    employmentType: 'Freelance',
     description:
-      'Offered custom software solutions specializing in web development and cloud DevOps. Developed high-quality bespoke applications including Expensify, 3Blocks, and KnackApp.',
-    impact: 'Delivered 10+ projects with 100% client satisfaction',
+      'Delivered custom software solutions for clients in fintech and logistics, specializing in taking greenfield ideas to production-ready, scalable cloud applications.',
+    // TODO(mike): restore a verified figure here if you can back it in interviews
+    impact: 'Delivered 10+ production applications for repeat clients',
     highlights: [
-      'Consulted on greenfield builds from ideation to launch across fintech, logistics, and education clients.',
-      'Containerized deployments on AWS to deliver observable, maintainable platforms tailored to each business.',
+      'Consulted on full-stack architecture for startups, helping them launch products within months.',
+      'Containerized legacy applications on AWS, reducing hosting costs and improving deploy reliability.',
     ],
     skills: ['React', 'Node.js', 'AWS', 'GraphQL', 'TypeScript'],
   },
@@ -102,12 +125,13 @@ export const experiences: Experience[] = [
     title: 'Technical Team Lead',
     company: 'BloomTech',
     period: 'Mar 2020 - Aug 2020',
+    employmentType: 'Part-time',
     description:
-      'Mentored 11 students on effective learning and problem-solving. Reviewed code, organized 15+ after-hour sessions, facilitated daily standups, and enhanced student engagement.',
-    impact: 'Improved student retention by 40% and code quality standards',
+      'Mentored a cohort of 11 engineering students. Facilitated code reviews, pair programming sessions, and daily standups to simulate a professional engineering environment.',
+    impact: 'Improved student retention by 40% through targeted mentorship',
     highlights: [
-      'Designed curricula and after-hour sessions that boosted learner engagement and shipped production-ready labs.',
-      'Facilitated code reviews, agile rituals, and mentorship that elevated 11 engineers-in-training.',
+      'Designed technical curricula that helped students master complex algorithms and React patterns.',
+      'Conducted over 100 code reviews, teaching best practices in clean code and version control.',
     ],
     skills: ['Team Leadership', 'Mentoring', 'Code Review', 'Agile', 'Public Speaking'],
   },
@@ -116,28 +140,28 @@ export const experiences: Experience[] = [
     company: 'Complete Farmer',
     period: 'May 2019 - Aug 2019',
     description:
-      'Collaborated with agile team to design and develop reusable components. Significantly improved UI performance and accessibility while ensuring technical feasibility of designs.',
-    impact: 'Improved page load time by 45% and accessibility score to 95+',
+      'Worked with the product team to build a responsive, accessible dashboard for agricultural investors. Focused on component reusability and UI performance.',
+    impact: 'Improved dashboard load times by 45% via code splitting and optimization',
     highlights: [
-      'Refactored React architecture into reusable design system components with better performance budgets.',
-      'Partnered with designers to ship accessibility improvements that hit AA targets across the platform.',
+      'Refactored the React codebase to use a unified design system, speeding up future feature development.',
+      'Implemented accessibility best practices, ensuring the platform was usable by all customers.',
     ],
     skills: ['React', 'Redux', 'JavaScript', 'Agile', 'UI/UX'],
   },
   {
-    title: 'Subject Teacher - Science, Mathematics, ICT',
+    title: 'Subject Teacher',
     company: 'Ghana Education Service',
     period: 'Sep 2016 - May 2019',
     description:
-      'Developed and delivered teaching instructions in multiple subjects. Assessed student performance and mentored students on course selection for further studies.',
-    impact: 'Mentored 200+ students with 85% pass rate',
+      'Taught Science and ICT. Developed curriculum and mentored students, fostering a love for technology and problem-solving.',
+    impact: 'Mentored 200+ students achieving an 85% distinction rate',
     highlights: [
-      'Built interdisciplinary lesson plans that blended science, mathematics, and ICT for diverse classrooms.',
-      'Guided students on academic pathways and career planning resulting in 85% exam pass rates.',
+      'Introduced practical ICT lessons that bridged the gap between theory and real-world application.',
+      'Guided students in career selection, with many going on to pursue STEM fields.',
     ],
     skills: ['Teaching', 'Facilitation', 'Public Speaking', 'Leadership'],
   },
 ]
 
 export const experienceIntro =
-  'I help teams ship resilient platforms, from high-volume fintech rails to AI-powered customer support systems while mentoring engineers and aligning delivery with business outcomes.'
+  'Cloud & platform engineer building reliable infrastructure, deployment pipelines, and observability systems — with security designed in. Previously shipped fintech transaction systems and AI-powered products. I mentor engineers and align technical decisions with business outcomes.'

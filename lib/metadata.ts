@@ -12,8 +12,9 @@ const resolveSiteUrl = () => {
 
 const siteUrl = resolveSiteUrl()
 const siteName = 'Mike Attara'
-const defaultTitle = 'Mike Attara - Software Engineer'
-const defaultDescription = 'Building resilient systems and scalable platforms.'
+const defaultTitle = 'Mike Attara — Cloud & Platform Engineer'
+const defaultDescription =
+  'Cloud & Platform Engineer building secure, resilient infrastructure on AWS and Kubernetes. AWS Community Builder (Security). Open source: Ditto, JetStream Bridge, NatsPubsub.'
 const defaultImage = '/og-image.png'
 
 const normalizedPath = (path: string) => {
@@ -33,30 +34,45 @@ export const siteMetadata = {
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: defaultTitle,
+  title: {
+    default: defaultTitle,
+    template: '%s | Mike Attara',
+  },
   description: defaultDescription,
   keywords: [
-    'Backend Engineer',
-    'Platform Engineer',
-    'Software Engineer',
-    'DevOps Engineer',
-    'Ruby on Rails',
-    'NestJS',
-    'Node.js',
-    'TypeScript',
+    // Primary keywords
+    'cloud platform engineer remote',
+    'platform engineer',
+    'cloud security engineer',
+    'DevSecOps engineer remote',
+    'senior backend engineer remote',
+    'infrastructure engineer AWS',
+    // Technical skills
     'AWS',
     'Kubernetes',
-    'Docker',
+    'Terraform',
+    'Infrastructure as Code',
+    'IAM',
+    'CI/CD',
+    'Go',
+    'Ruby on Rails',
+    'TypeScript',
     'PostgreSQL',
-    'Microservices',
-    'Event-Driven Architecture',
-    'Fintech',
-    'Payment Systems',
-    'Technical Leadership',
-    'System Architecture',
+    'NATS JetStream',
+    'Docker',
+    // Domain expertise
+    'cloud security',
+    'supply chain security',
+    'platform engineering',
+    'distributed systems',
+    'event-driven architecture',
+    'observability',
+    'SRE',
+    'fintech systems',
+    // Brand
     'Mike Attara',
-    'Ghana Software Engineer',
-    'Backend Developer',
+    'AWS Community Builder',
+    'attara.dev',
   ],
   authors: [{ name: 'Mike Attara', url: 'https://www.attara.dev' }],
   creator: 'Mike Attara',
@@ -85,7 +101,7 @@ export const baseMetadata: Metadata = {
         url: defaultImage,
         width: 1200,
         height: 630,
-        alt: `${defaultTitle} social share preview`,
+        alt: 'Mike Attara — Cloud & Platform Engineer',
       },
     ],
   },
@@ -95,6 +111,22 @@ export const baseMetadata: Metadata = {
     description: defaultDescription,
     images: [defaultImage],
     creator: '@attaradev',
+    site: '@attaradev',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    // Add verification codes when available
+    // google: 'your-google-verification-code',
   },
 }
 
@@ -116,6 +148,7 @@ type CreateMetadataOptions = {
     | 'video.movie'
     | 'video.episode'
   image?: string
+  noIndex?: boolean
 }
 
 export function createMetadata({
@@ -124,9 +157,10 @@ export function createMetadata({
   path = '/',
   type = 'website',
   image,
+  noIndex = false,
 }: CreateMetadataOptions): Metadata {
   const canonicalPath = normalizedPath(path)
-  const finalTitle = title ? `${title} | ${siteName}` : defaultTitle
+  const finalTitle = title || defaultTitle
   const finalDescription = description ?? defaultDescription
   const ogImage = image ?? defaultImage
 
@@ -145,7 +179,9 @@ export function createMetadata({
       images: [
         {
           url: ogImage,
-          alt: `${finalTitle} social share preview`,
+          width: 1200,
+          height: 630,
+          alt: `${finalTitle}`,
         },
       ],
     },
@@ -155,5 +191,11 @@ export function createMetadata({
       description: finalDescription,
       images: [ogImage],
     },
+    ...(noIndex && {
+      robots: {
+        index: false,
+        follow: false,
+      },
+    }),
   }
 }

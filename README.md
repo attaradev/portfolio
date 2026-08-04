@@ -1,6 +1,6 @@
-# Attara.dev Redesign
+# attara.dev
 
-A refreshed personal site for Mike Attara, built with Next.js 15 and Tailwind CSS 4. It delivers a polished engineering portfolio with responsive layouts, rich storytelling sections, and first-class support for light and dark theming.
+Personal site of Mike Attara — Cloud & Platform Engineer. Built with Next.js 15 and Tailwind CSS 4, statically exported and deployed to GitHub Pages at [www.attara.dev](https://www.attara.dev).
 
 ## Features
 
